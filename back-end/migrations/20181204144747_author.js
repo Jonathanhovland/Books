@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
         table.increments()
         table.string('firstName')
         table.string('lastName')
-        table.string('biography')
+        table.text('biography')
         table.string('portraitURL')
     }) 
 }

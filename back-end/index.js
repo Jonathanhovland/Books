@@ -4,9 +4,18 @@ const bodyParser = require("body-parser")
 const cors = require("cors")
 const port = process.env.PORT || 3005
 
+const bookRoutes = require("./routes/book")
+const authorRoutes = require("./routes/author")
+const bookAuthorRoutes = require("./routes/author")
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
+
+app.use("/books", bookRoutes)
+app.use("/author", authorRoutes)
+app.use("/book-author", bookAuthorRoutes)
+
 
 app.use(notFound)
 

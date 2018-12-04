@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         table.increments()
         table.string('bookTitle')
         table.string('bookGenre')
-        table.string('bookDescription')
+        table.text('bookDescription')
         table.string('bookCoverURL')
     })
 }
