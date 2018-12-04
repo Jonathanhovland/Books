@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
 
-app.use("/books", bookRoutes)
+app.use("/book", bookRoutes)
 app.use("/author", authorRoutes)
 app.use("/book-author", bookAuthorRoutes)
 

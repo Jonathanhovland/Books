@@ -6,8 +6,8 @@ const knex = require("../db/connection")
 router.get("/", (req, res) => {
     knex("book")
       .orderBy("id", "asc")
-      .then(book => {
-        res.json({ book })
+      .then(books => {
+        res.json({ books })
       })
    })
    
@@ -17,8 +17,8 @@ router.get("/", (req, res) => {
    
     knex("book")
       .where("id", id)
-      .then(theBook => {
-        res.json({ book: theBook })
+      .then(book => {
+        res.json({ book: book[0] })
       })
    })
    
@@ -53,12 +53,12 @@ router.get("/", (req, res) => {
    router.delete("/:id", (req, res) => {
     const id = req.params.id
    
-    knex("beer")
+    knex("book")
       .where("id", id)
       .delete()
       .returning("*")
       .then(deletedBook => {
-        res.json({ book: deletedBook[0] })
+        res.json({ books: deletedBook[0] })
       })
    })
 
