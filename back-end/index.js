@@ -8,6 +8,11 @@ const bookRoutes = require("./routes/book")
 const authorRoutes = require("./routes/author")
 const bookAuthorRoutes = require("./routes/author")
 
+app.get("/", (req, res) => res.json({
+    "book": "https://sheltered-caverns-11078.herokuapp.com/book",
+    "author": "https://sheltered-caverns-11078.herokuapp.com/author"
+   }))
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
